@@ -48,7 +48,7 @@ nc.subscribe(subject, queue_group) do |msg|
   if show_raw
     puts msg
   else
-    time_prefix = "[#{Time.now}] " if show_time
+    time_prefix = "[#{Time.local}] " if show_time
     puts "#{time_prefix}[\##{index += 1}] Received on [#{msg.subject}] : '#{msg}'"
   end
 end
